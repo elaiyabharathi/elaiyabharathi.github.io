@@ -6,7 +6,7 @@ Date.prototype.addDays = function (days) {
 $(document).ready(function () {
     /* Flip Clock  */
     var clock;
-    var date  = new Date("December 13, 2015 12:49:00");
+    var date  = new Date("December 14, 2015 18:00:00");
     console.log(date);
     var now = new Date();
     console.log(now);
