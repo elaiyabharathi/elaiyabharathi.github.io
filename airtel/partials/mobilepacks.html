@@ -1,0 +1,52 @@
+<div class="container" ng-init="packtype=1">
+	<div class="bg-info dialog">
+		<form ng-submit="addpack()">
+        <div class="form-group">
+            <label for="MRP">MRP</label>
+            <input type="number" class="form-control" id="MRP" name="amount" ng-model="mrp" required/>
+        </div>
+        <div class="form-group">
+        	<label for="option">Packtype</label>
+	        <select name="option" ng-model="packtype"id="option" class="form-control">
+	        	<option value="1">Talk Time Pack</option>
+	        	<option value="2">Data Pack</option>
+	        	<option value="3">SMS pack</option>
+	        </select>
+    	</div>
+		<div class="form-group" ng-show="packtype==1">
+			<label for="talktime">Talktime</label>
+			<input type="number" class="form-control" id="talktime" ng-model="talktime"/>
+		</div>
+		<div class="form-group" ng-show="packtype==2">
+			<label for="datapack">Datapack</label>
+			<input type="text" class="form-control" id="datapack" ng-model="datapack"/>
+		</div>
+		<div class="form-group" ng-show="packtype==3">
+			<label for="SMS">SMS</label>
+			<input type="text" class="form-control" id="SMS" ng-model="sms"/>
+		</div>
+		<div class="form-group">
+			<label for="validity">Validity</label>
+			<input type="text" class="form-control" id="validity" ng-model="validity" required/>
+		</div>
+		<div class="form-group">
+			<label for="remarks">Remarks</label>
+			<input type="text" class="form-control" id="remarks" ng-model="remarks">
+		</div>
+		<button class="btn btn-block btn-primary" type="submit">Add Pack</button>
+		</form>
+    </div>
+
+	<div class="feedbacks container" ng-repeat="pack in packs">
+	    <blockquote>
+	        <p>MRP : {{pack[0]}}</p>
+	        <p>Validity  :{{pack[1]}}</p>
+	        <p>TalkTime  : {{pack[2]}}</p>
+	        <p>SMS : {{pack[3]}}</p>
+	       	<p>Data : {{pack[4]}}</p>
+	        <p>Remarks : {{pack[5]}}</p>
+	        <p>Object id:{{pack[6]}}</p>
+	        <button class="btn btn-primary" ng-click="deletepack(pack[6])">Delete</button>
+	    </blockquote>
+	</div>
+</div>

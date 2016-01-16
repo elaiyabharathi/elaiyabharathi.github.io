@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+                <blockquote>
+                    <p>Current Balance : {{currentbalance}}</p>
+                    <button class="btn btn-defalut" ng-click="refresh()">Refresh</button>
+                </blockquote>
+            </div>
+            <div>
+                <div class="form-group">
+                    <label for="amount">Enter amount</label>
+                    <input type="text" class="form-control" id="amount" name="amount" ng-model="amount" required/>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block"ng-click="showcode()">Scan Qr code</button>
+            <div ng-show="show" id="qrcode" alt="qr code"></div>
+            <button ng-show="show" class="btn btn-primary btn-block" ng-click="collect()">Collect money</button>
+        </div>
+    </div>
+    <script>
+
+    </script>
+</div>
