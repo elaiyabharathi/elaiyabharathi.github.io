@@ -27,13 +27,13 @@ $.urlParam = function(name){
 
 setTimeout(function() {
   $("#namediv").remove();
-}, 5000);
+}, 3000);
 
 $(document).ready(function() {
   // let searchParams = new URLSearchParams(window.location.search)
   // let param = searchParams.get('sent')
   let name = $.urlParam('name')
-  $("#name").text("Vanakkam "+name+"! We invite you to cordially to the wedding of")
+  $("#name").text("Vanakkam "+name+"! We are thrilled to invite you to celebrate the union of")
   //$("#name").text("Hello "+window.location.href.substr(window.location.href.indexOf("?name=")+6));
 });
 // if (window.location.href.indexOf("?name=") > -1) {
