@@ -7,6 +7,42 @@ $(document).ready(function() {
   }); // initialize animate on scroll library
 });
 
+function functionAlert(msg, myYes) {
+  var confirmBox = $("#confirm");
+  confirmBox.find(".message").text(msg);
+  confirmBox.find(".yes").unbind().click(function() {
+     confirmBox.hide();
+  });
+  confirmBox.find(".yes").click(myYes);
+  confirmBox.show();
+}
+
+$.urlParam = function(name){
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+  if (results==null) {
+     return null;
+  }
+  return decodeURI(results[1]) || 0;
+}
+
+setTimeout(function() {
+  $("#namediv").remove();
+}, 5000);
+
+$(document).ready(function() {
+  // let searchParams = new URLSearchParams(window.location.search)
+  // let param = searchParams.get('sent')
+  let name = $.urlParam('name')
+  $("#name").text("Vanakkam "+name+"! We invite you to cordially to the wedding of")
+  //$("#name").text("Hello "+window.location.href.substr(window.location.href.indexOf("?name=")+6));
+});
+// if (window.location.href.indexOf("?name=") > -1) {
+//   //functionAlert("Hey","");
+//   //$("#name).text = "Hello "+window.location.href.substr(window.location.href.indexOf("?name=")+6))
+
+//   $("#name").text("Hello "+window.location.href.substr(window.location.href.indexOf("?name=")+6));
+// }
+
 // Smooth scroll for links with hashes
 $("a.smooth-scroll").click(function(event) {
   // On-page links
